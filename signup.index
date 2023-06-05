@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up | Cloud Supply Chain Management System</title>
+	<style>
+body {
+	background-image: url("bg-01.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.signup-container {
+	background-color: #333;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: row;
+	max-width: 65%;
+}
+
+.signup-left {
+	flex: 1;
+	padding-right: 20px;
+}
+
+.signup-right {
+	flex: 1;
+}
+
+.signup-logo {
+	max-width: 250px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 28px;
+}
+
+p {
+	font-size: 18px;
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+label, input {
+	display: block;
+	margin-bottom: 10px;
+}
+
+label {
+	color: #fff;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	width: 70%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+input[type="submit"]:hover {
+	background-color: #3e8e41;
+}
+
+
+
+	</style>
+</head>
+<body>
+	
+	<main>
+		<div class="signup-container">
+			<div class="signup-left">
+				
+				<h1>Welcome to the Cloud Supply Chain Management System</h1>
+				<p>This website is cool. Sign up now to get started!
+<br></br>•Take control and boost your supply chain efficiency. Use Supply Chain Management Solution.
+<br></br>
+•Real-time visibility into inventory, orders, shipments, suppliers, customers. Easily track metrics, respond to changes, make data-driven decisions. Reduce costs, improve margins.
+<br></br>
+•Meet supplier and retailer needs. Standardize best practices, increase transparency, strengthen partnerships.
+<br></br>
+•Discover supply chain optimization. Unlock potential. Start using today!</p>
+			</div>
+			<div class="signup-right">
+				<img src="logo.png" alt="Logo" class="signup-logo">
+				<form method="post" action="signup.php">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" required>
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required>
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password" required>
+					<label for="confirm-password">Confirm Password:</label>
+					<input type="password" id="confirm-password" name="confirm-password" required>
+					<input type="submit" value="Sign up"> 
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+	

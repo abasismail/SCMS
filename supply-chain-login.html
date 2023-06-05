@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login | Cloud Supply Chain Management System</title>
+	<link rel="stylesheet" type="css" href="/CSS/style.css">
+</head>
+<body>
+	
+	<main>
+		<div class="login-container">
+			<img src="/Images/logo.jpeg" alt="Logo" class="login-logo">
+			<form method="post" action="login.php">
+				
+				<label for="role">Choose a role:</label>
+				<select id="role" name="role">
+					<option value="supplier">Supplier</option>
+					<option value="customer">Customer</option>
+				</select>
+				<BR></BR>
+				<label for="username">Username/Email:</label>
+				<input type="email" id="username" name="username" required>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+				<input type="submit" value="           Log in           "> 
+				<a href="http://www.google.com/"> <label> Sign up?</label></a>
+			</form>
+		</div>
+	</main>
+</body>
+</html>
