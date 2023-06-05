@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login | Cloud Supply Chain Management System</title>
+	<style>
+body {
+	background-image: url("../Images/bg-01.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.signup-container {
+	background-color: #333;
+	padding-left:10px;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: row;
+	max-width: 75%;
+}
+
+.signup-left {
+	display: flex;
+	flex-direction: column;
+	max-width: 75%;
+	
+}
+
+.signup-right {
+	padding:inherit;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.signup-logo {
+	max-width: 250px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 28px;
+}
+
+p {
+	font-size: 18px;
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+label, input {
+	display: block;
+	margin-bottom: 10px;
+}
+
+label {
+	color: #fff;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	width: 70%;
+	
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+}
+
+.submit{
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+
+  
+  .radio-toolbar input[type="radio"] {
+	opacity: 0;
+	position: fixed;
+	width: 0;
+  }
+  
+  .radio-toolbar label {
+	  display: inline-block;
+	  background-color: #ddd;
+	  padding: 10px 20px;
+	  font-family: sans-serif, Arial;
+	  font-size: 16px;
+	  border: 2px solid #444;
+	  border-radius: 4px;
+  }
+  
+  .radio-toolbar label:hover {
+	background-color: #dfd;
+  }
+  
+  
+  .radio-toolbar input[type="radio"]:checked + label {
+	  background-color: #bfb;
+	  border-color: #4c4;
+  }
+  
+
+	</style>
+	
+	<script src="../PAGES/libs/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rotate/2.3.2/jquery.rotate.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#info').hide();
+			$('#mirror').click(function() {
+				$('#info').hide();
+			});
+			$('#bell').click(function(e) {
+				e.stopPropagation();
+				$('#info').show();
+				$('#mirror').show();
+			});
+			$(document).click(function() {
+				$('#info').hide();
+				$('#mirror').hide();
+			});
+		});
+		function validate(){
+			var frm=document.querySelector("form");
+			var pass=frm.elements[name='password'].value;
+			var confpass=frm.elements[name='confirm-password'].value;
+			if(pass!=confpass){
+			alert("passwords should be equal");
+			location.reload();
+			}
+			else{
+				if(frm.elements[name='type'].value=='supplier')
+				alert("Waiting for approval");
+
+				frm.submit;
+
+			}
+			
+			
+			
+			
+		}
+	</script>
+	
+</head>
+<body>
+	<div id="el"><button id="bell" style=" border: none;
+		cursor: pointer;
+		appearance: none;
+		background-color: inherit; "><img style="height:40px;width:40x" src="../Images/Hamburger_icon.svg.png" id="img" ></button>
+		<div id="info" class="signup-container signup-left" style="z-index:2;position:absolute;display:none;float:left;height:100">
+			<h5>Welcome to the Cloud Supply Chain Management System</h1>
+			<p>This website is cool. Sign up now to get started!<br>
+				<br>•Take control and boost your supply chain efficiency.<br> Use Supply Chain Management Solution.
+				<br><br>
+				•Real-time visibility into inventory, orders, shipments, <br>
+				suppliers, customers. Easily track metrics, <br>
+				respond to changes, make data-driven decisions. <br>
+				Reduce costs, improve margins.
+				<br>
+				<br>
+				•Meet supplier and retailer needs.<br> 
+				Standardize best practices, <br>
+				increase transparency, strengthen partnerships.<br>
+				<br>
+				<br>
+				•Discover supply chain optimization. <br>
+				Unlock potential. <br>
+				Start using today!</p>
+		</div>
+	</div>
+		
+	<main>
+		<div class="signup-container">
+			<div class="signup-right">
+				<img src="../Images/logo.png" alt="Logo" class="signup-logo">
+				<form id="login" name="login" method="POST" action="../php/login.php">
+					<label for="email">Email:</label>
+					<input type="text" id="email" name="email" required>
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password" required>
+					<div class="radio-toolbar">
+						<input type="radio" id="customer" name="type" value="customer" checked>
+						<label for="customer">Customer</label>
+					
+						<input type="radio" id="supplier" name="type" value="supplier">
+						<label for="supplier">Supplier</label>
+					</div>
+					
+					
+					
+					<input type="submit" value="submit"><span><a style="color:rgb(44, 255, 29)"href="../PAGES/signup.html">Don't have an account? Sign up</a></span>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

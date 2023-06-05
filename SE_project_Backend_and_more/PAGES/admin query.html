@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Query Inputter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>SQL Query Inputter</h1>
+    <form id="query-form" method="POST">
+        <label for="query">SQL Query:</label><br>
+        <textarea id="query" name="query" rows="10" cols="80"></textarea><br>
+        <input type="submit" value="Execute">
+    </form>
+    <div id="result"></div>
+    <script>
+        $(document).ready(function() {
+            $('#query-form').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: '../php/execute-query.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#result').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
